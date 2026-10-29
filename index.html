@@ -8,34 +8,34 @@
 <title>Robert & Iva | 28. svibnja 2027.</title>
 <style>
 :root{--paper:#f8f5ef;--ink:#51483e;--muted:#7e7264;--line:#d8cdbd;--card:#fffdf9;--accent:#9b8c77}
-*{box-sizing:border-box}html{scroll-behavior:smooth}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:16px}a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible{outline:2px solid #9b8c77;outline-offset:3px}
 body{margin:0;background:var(--paper);color:var(--ink);font-family:Georgia,"Times New Roman",serif;line-height:1.7}
 a{color:inherit}.wrap{width:min(100% - 32px,760px);margin:auto}
-.hero{min-height:82vh;display:grid;place-items:center;padding:56px 0;text-align:center;position:relative;overflow:hidden;color:#fff;background:linear-gradient(135deg,rgba(34,29,24,.48),rgba(34,29,24,.66)),url("https://visitljubuski.com/wp-content/uploads/bigeste.jpg") center 48%/cover no-repeat}
+.hero{min-height:82vh;display:grid;place-items:center;padding:56px 0;text-align:center;position:relative;overflow:hidden;color:#fff;background:linear-gradient(135deg,rgba(34,29,24,.48),rgba(34,29,24,.66)),url("https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=2000&q=85") center 48%/cover no-repeat}
 .hero:before,.hero:after{content:"";position:absolute;width:190px;height:300px;border:1px solid #d9cebd;border-radius:100% 0 100% 0;opacity:.6;transform:rotate(28deg);pointer-events:none;display:none}
 .hero:before{left:-120px;top:60px}.hero:after{right:-120px;bottom:40px;transform:rotate(208deg)}
 .kicker{font:600 11px/1.4 Arial,sans-serif;letter-spacing:.25em;text-transform:uppercase;color:var(--muted)}.hero .kicker{color:#f5eee4}.hero .amp{color:#e7d4b8}.hero .ornament{background:rgba(255,255,255,.65)}.hero .lead{color:#f5eee4}.hero .btn{background:#f8f5ef;color:#51483e}
 .ornament{width:86px;height:1px;background:var(--line);margin:24px auto}
-h1{font-size:clamp(48px,10vw,84px);font-weight:400;line-height:1.05;letter-spacing:-.045em;margin:22px 0}
+h1{font-size:clamp(54px,11vw,92px);font-weight:400;line-height:1.02;letter-spacing:-.045em;margin:24px 0;text-shadow:0 2px 18px rgba(0,0,0,.16)}
 .amp{font-style:italic;color:var(--accent);font-size:.7em}.date{font-size:19px;letter-spacing:.12em}
 .lead{font-size:18px;max-width:560px;margin:16px auto;color:var(--muted)}
-.btn{display:inline-block;text-decoration:none;background:var(--ink);color:var(--card);padding:12px 22px;border:0;border-radius:3px;font:600 11px/1.5 Arial,sans-serif;letter-spacing:.13em;text-transform:uppercase;cursor:pointer}
-section{padding:58px 0;text-align:center;border-top:1px solid var(--line)}h2{font-size:32px;font-weight:400;margin:10px 0 20px}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;text-decoration:none;background:var(--ink);color:var(--card);padding:13px 24px;border:0;border-radius:3px;font:600 11px/1.5 Arial,sans-serif;letter-spacing:.13em;text-transform:uppercase;cursor:pointer;transition:transform .2s ease,background .2s ease}.btn:hover{transform:translateY(-1px);background:#6b5849}
+section{padding:76px 0;text-align:center;border-top:1px solid var(--line)}h2{font-size:clamp(30px,6vw,38px);font-weight:400;margin:12px 0 24px;line-height:1.2}
 .details{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:28px}
 .detail{padding:0 0 22px;background:var(--card);border:1px solid var(--line);overflow:hidden}.detail h3{padding:0 16px}.detail p{padding-left:16px;padding-right:16px}.detail img{display:block;width:100%;height:190px;object-fit:cover;margin:0 0 18px}.detail .detail-links{padding:0 16px}.detail .detail-links a{font-size:13px}.detail h3{font-size:21px;font-weight:400;margin:0 0 8px}.detail p{margin:0;color:var(--muted);font-size:14px}.time{font-size:24px!important;color:var(--ink)!important;margin:10px 0!important}
-.rsvp{background:#eee7dc;padding:34px 20px;margin:0 auto 48px;max-width:650px}
+.rsvp{background:#eee7dc;padding:clamp(26px,5vw,44px) clamp(16px,4vw,34px);margin:30px auto 0;max-width:650px;border:1px solid #e1d3c4;border-radius:4px;box-shadow:0 10px 30px rgba(57,39,27,.06)}
 .form-grid{max-width:500px;margin:0 auto;text-align:left;display:grid;gap:17px}
 .field label,.legend{display:block;font-size:15px;font-weight:600;margin-bottom:6px}
-input[type=text],textarea,select{width:100%;font:15px Arial,sans-serif;color:var(--ink);background:var(--card);border:1px solid var(--line);border-radius:4px;padding:13px 12px;outline:none}
+input[type=text],textarea,select{width:100%;min-height:48px;font:16px Arial,sans-serif;color:var(--ink);background:var(--card);border:1px solid var(--line);border-radius:4px;padding:13px 12px;outline:none}
 input:focus,textarea:focus,select:focus{border-color:var(--accent);box-shadow:0 0 0 2px #9b8c7722}
 textarea{min-height:88px;resize:vertical}
 .choices{display:flex;gap:10px;flex-wrap:wrap}
-.choice{flex:1;min-width:130px;display:flex;gap:8px;align-items:center;padding:12px;background:var(--card);border:1px solid var(--line);border-radius:4px;font:14px Arial,sans-serif;cursor:pointer}
+.choice{flex:1;min-width:130px;min-height:48px;display:flex;gap:10px;align-items:center;padding:13px;background:var(--card);border:1px solid var(--line);border-radius:4px;font:14px Arial,sans-serif;cursor:pointer}
 .choice:has(input:checked){border-color:var(--accent);background:#f9f4ec}
 .choice input{accent-color:var(--ink)}
 .checks{display:grid;gap:8px}
 .small{font:12px/1.6 Arial,sans-serif;color:var(--muted);margin:0}
-.form-actions{text-align:center;margin-top:8px}.status{font:13px/1.6 Arial,sans-serif;text-align:center;color:var(--muted);min-height:22px}
+.form-actions{text-align:center;margin-top:12px}.form-actions .btn{min-width:220px;min-height:52px;font-size:12px}.status{font:13px/1.6 Arial,sans-serif;text-align:center;color:var(--muted);min-height:22px}
 .countdown-section{padding:34px 0 42px;background:#f1ebe2;border-top:0}
 .countdown-title{font-size:25px;font-weight:400;margin:4px 0 6px}
 .countdown-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;max-width:440px;margin:22px auto 0}
@@ -56,9 +56,9 @@ footer{text-align:center;padding:10px 0 42px;color:var(--muted);font-size:13px}
 #detalji .detail p{padding:0;margin:0;color:#7e7264;font-size:17px;line-height:1.65;text-align:center}
 #detalji .detail p:first-of-type{color:#51483e;font-size:22px}
 #detalji .detail .time{margin:12px 0!important;color:#51483e!important;font-size:28px!important}
-#detalji .detail>a{display:inline-block;margin-top:10px;color:#684c3f;text-underline-offset:4px;font-size:16px}
+#detalji .detail>a{display:inline-flex;align-items:center;justify-content:center;min-height:46px;margin-top:16px;padding:10px 18px;border:1px solid #cdb8a8;border-radius:3px;background:#fffaf4;color:#684c3f;text-decoration:none;font:600 11px/1.5 Arial,sans-serif;letter-spacing:.1em;text-transform:uppercase;transition:background .2s ease}#detalji .detail>a:hover{background:#eadfd3}
 @media(max-width:520px){#detalji{padding:54px 0 60px}#detalji .details{display:block}#detalji .detail h3{padding:0}#detalji .detail p{padding:0}}
-@media(max-width:520px){.details{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.detail img{height:112px}.detail h3{font-size:17px;line-height:1.25;padding:0 9px}.detail p{font-size:12px;padding-left:9px;padding-right:9px}.detail p a{font-size:12px}.hero{min-height:78vh;background-position:57% center}.hero:before,.hero:after{opacity:.3}.rsvp{padding:28px 16px}.choices{flex-direction:column}.choice{flex:none}.detail img{height:205px}}
+@media(max-width:520px){.details{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.detail img{height:112px}.detail h3{font-size:17px;line-height:1.25;padding:0 9px}.detail p{font-size:12px;padding-left:9px;padding-right:9px}.detail p a{font-size:12px}.hero{min-height:82svh;background-position:57% center}.hero:before,.hero:after{opacity:.3}.rsvp{padding:28px 16px}.choices{flex-direction:column}.choice{flex:none}.detail img{height:205px}}
 
 /* Dorada ostalih sekcija: nježniji razmaci, fotografije i kontaktne kartice. */
 #atrakcije{background:#f4eee6}
@@ -66,11 +66,11 @@ footer{text-align:center;padding:10px 0 42px;color:var(--muted);font-size:13px}
 #atrakcije h2,#kontakti h2{color:#51483e}
 #atrakcije .details{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;align-items:stretch;margin-top:32px}
 #atrakcije .detail{background:#fffdf9;border:1px solid #e5dbcf;border-radius:3px;overflow:hidden;padding:0 0 20px;text-align:left;box-shadow:0 5px 18px rgba(67,48,34,.06);display:flex;flex-direction:column}
-#atrakcije .detail img{width:100%;height:180px;object-fit:cover;display:block;margin:0 0 17px;background:#e9dfd2}
+#atrakcije .detail img{width:100%;height:210px;object-fit:cover;display:block;margin:0 0 17px;background:#e9dfd2;transition:transform .35s ease}#atrakcije .detail:hover img{transform:scale(1.015)}
 #atrakcije .detail h3{padding:0 17px;margin:0 0 8px;font-size:clamp(19px,3vw,23px);line-height:1.25;color:#51483e}
 #atrakcije .detail p{padding:0 17px;color:#7e7264;font-size:14px;line-height:1.65}
 #atrakcije .detail p:last-of-type{margin-top:auto!important;padding-top:14px}
-#atrakcije .detail p a{color:#8d6d5c;text-underline-offset:3px}
+#atrakcije .detail p a{display:inline-block;color:#795846;text-underline-offset:3px;font-weight:600}#atrakcije .detail p:last-of-type a:last-child{display:inline-block;padding:7px 10px;margin-top:5px;border:1px solid #d8c4b4;border-radius:3px;text-decoration:none;background:#f8f2eb}
 #atrakcije .detail:has(a[href*="visitljubuski.com"]):not(:has(img)){grid-column:1/-1;padding:22px;text-align:center}
 #atrakcije .small{max-width:650px;margin-left:auto;margin-right:auto}
 #kontakti{background:#eee6db;padding:62px 0 70px}
@@ -87,7 +87,7 @@ footer{padding-top:24px}
 @media(max-width:520px){
  #atrakcije{padding:48px 0}
  #atrakcije .details{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
- #atrakcije .detail img{height:125px;margin-bottom:13px}
+ #atrakcije .detail img{height:150px;margin-bottom:13px}
  #atrakcije .detail h3{font-size:18px;padding:0 11px}
  #atrakcije .detail p{font-size:12px;padding-left:11px;padding-right:11px;line-height:1.55}
  #atrakcije .detail p a{font-size:12px}
@@ -107,7 +107,7 @@ footer{padding-top:24px}
   <div class="ornament"></div>
   <div class="date">28. SVIBNJA 2027.</div>
   <p class="lead">Jedan poseban dan, a još ljepši kad ga dijelimo s vama.</p>
-  <a class="btn" href="#detalji">Detalji vjenčanja</a>
+  <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:28px"><a class="btn" href="#detalji">Detalji vjenčanja</a><a class="btn" href="#rsvp" style="background:#ead8cb;color:#51483e">Potvrdi dolazak</a></div>
  </div>
 </header>
 <section class="countdown-section" aria-label="Odbrojavanje do vjenčanja">
@@ -127,9 +127,9 @@ footer{padding-top:24px}
  <div class="wrap">
   <div class="kicker">Veselimo se zajedničkom slavlju</div><h2>Gdje i kada</h2>
   <div class="details">
-   <article class="detail"><h3>Okupljanje</h3><p>Hotel Bigeste</p><p>Ljubuški</p><p class="time">16:00</p><a href="https://www.google.com/maps/search/?api=1&query=Hotel+Bigeste+Ljubu%C5%A1ki" target="_blank" rel="noopener">Prikaži kartu</a></article>
-   <article class="detail"><h3>Vjenčana ceremonija</h3><p>Katolička crkva Svetog Ante Padovanskog</p><p>Ljubuški</p><p class="time">18:00</p><a href="https://www.google.com/maps/search/?api=1&query=Katoli%C4%8Dka+crkva+Svetog+Ante+Padovanskog+Ljubu%C5%A1ki" target="_blank" rel="noopener">Prikaži kartu</a></article>
-   <article class="detail"><h3>Večera i svadbeno slavlje</h3><p>Hotel Bigeste</p><p>Ljubuški</p><p class="time">20:00</p><a href="https://www.google.com/maps/search/?api=1&query=Hotel+Bigeste+Ljubu%C5%A1ki" target="_blank" rel="noopener">Prikaži kartu</a></article>
+   <article class="detail"><h3>Okupljanje</h3><p>Hotel Bigeste</p><p>Ljubuški</p><p class="time">16:00</p><a href="https://www.google.com/maps/search/?api=1&query=Hotel+Bigeste+Ljubu%C5%A1ki" target="_blank" rel="noopener">Otvori lokaciju</a></article>
+   <article class="detail"><h3>Vjenčana ceremonija</h3><p>Katolička crkva Svetog Ante Padovanskog</p><p>Ljubuški</p><p class="time">18:00</p><a href="https://www.google.com/maps/search/?api=1&query=Katoli%C4%8Dka+crkva+Svetog+Ante+Padovanskog+Ljubu%C5%A1ki" target="_blank" rel="noopener">Otvori lokaciju</a></article>
+   <article class="detail"><h3>Večera i svadbeno slavlje</h3><p>Hotel Bigeste</p><p>Ljubuški</p><p class="time">20:00</p><a href="https://www.google.com/maps/search/?api=1&query=Hotel+Bigeste+Ljubu%C5%A1ki" target="_blank" rel="noopener">Otvori lokaciju</a></article>
   </div>
  </div>
 </section>
@@ -169,11 +169,11 @@ footer{padding-top:24px}
   <h2>Otkrijte Ljubuški i okolicu</h2>
   <p class="lead">Ako imate vremena prije ili nakon slavlja, izdvojili smo nekoliko lijepih mjesta za istraživanje Hercegovine.</p>
   <div class="details">
-   <article class="detail"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0d/Kravica_Waterfalls%2CBosnia_%26_Herzegovina.jpg/1280px-Kravica_Waterfalls%2CBosnia_%26_Herzegovina.jpg" alt="Vodopad Kravica u zelenilu" loading="lazy" onerror="this.style.display='none'"><h3>Vodopad Kravica</h3><p>Prepoznatljivi slapovi na rijeci Trebižat, okruženi zelenilom — posebno lijepi za šetnju i fotografije.</p><p style="margin-top:12px"><a href="https://kravica.ba/" target="_blank" rel="noopener">Službene informacije</a> · <a href="https://www.google.com/maps/search/?api=1&query=Vodopad+Kravica+Ljubu%C5%A1ki" target="_blank" rel="noopener">Karta</a></p></article>
+   <article class="detail"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Slapovi_Kravice.jpg?width=1200" alt="Vodopad Kravica u zelenilu" loading="lazy" onerror="this.style.display='none'"><h3>Vodopad Kravica</h3><p>Prepoznatljivi slapovi na rijeci Trebižat, okruženi zelenilom — posebno lijepi za šetnju i fotografije.</p><p style="margin-top:12px"><a href="https://kravica.ba/" target="_blank" rel="noopener">Službene informacije</a> · <a href="https://www.google.com/maps/search/?api=1&query=Vodopad+Kravica+Ljubu%C5%A1ki" target="_blank" rel="noopener">Karta</a></p></article>
    <article class="detail"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/52/Kocusa.jpg/960px-Kocusa.jpg" alt="Široki slapovi vodopada Koćuša" loading="lazy" onerror="this.style.display='none'"><h3>Vodopad Koćuša</h3><p>Širok, slikovit slap u Veljacima, uz stare mlinove i ugodan krajolik za kraći izlet.</p><p style="margin-top:12px"><a href="https://visitljubuski.com/natural-sights/" target="_blank" rel="noopener">Turističke informacije</a> · <a href="https://www.google.com/maps/search/?api=1&query=Vodopad+Ko%C4%87u%C5%A1a+Veljaci" target="_blank" rel="noopener">Karta</a></p></article>
    <article class="detail"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Stari_grad_Ljubuski_01.jpg?width=960" alt="Povijesna tvrđava iznad Ljubuškog" loading="lazy" onerror="this.style.display='none'"><h3>Tvrđava hercega Stjepana</h3><p>Povijesna tvrđava iznad grada s pogledom na Ljubuški i okolni krajolik.</p><p style="margin-top:12px"><a href="https://visitljubuski.com/explore-ljubuski/" target="_blank" rel="noopener">Turističke informacije</a> · <a href="https://www.google.com/maps/search/?api=1&query=Tvr%C4%91ava+Herceg+Stjepan+Ljubu%C5%A1ki" target="_blank" rel="noopener">Karta</a></p></article>
    <article class="detail"><img src="https://www.moja-djelatnost.hr/Image/IndexFile?name=Riblji_restoran_Ljubu%C5%A1ki6.jpg" alt="Uređen restoran i stolovi za objedovanje" loading="lazy" onerror="this.style.display='none'"><h3>Riblji restoran Bago</h3><p>Poznato mjesto u Ljubuškom za ljubitelje ribljih specijaliteta i morske hrane.</p><p style="margin-top:12px"><a href="https://visitljubuski.com/gastro-ponuda-u-ljubuskom/" target="_blank" rel="noopener">Gastro ponuda Ljubuškog</a> · <a href="https://www.google.com/maps/search/?api=1&query=Riblji+restoran+Bago+Teskera+Ljubu%C5%A1ki" target="_blank" rel="noopener">Karta</a></p></article>
-   <article class="detail"><img src="https://hercegovina.in/wp-content/uploads/2024/08/bililo-5.jpg" alt="Kupalište Bililo uz rijeku Trebižat" loading="lazy" onerror="this.style.display='none'"><h3>Kupalište Bililo</h3><p>Ugodno mjesto uz rijeku Trebižat za predah, osvježenje i uživanje u prirodnom ambijentu.</p><p style="margin-top:12px"><a href="https://visitljubuski.com/gastro-ponuda-u-ljubuskom/" target="_blank" rel="noopener">Turističke informacije</a> · <a href="https://www.google.com/maps/search/?api=1&query=Kupali%C5%A1te+Bililo+Ljubu%C5%A1ki" target="_blank" rel="noopener">Karta</a></p></article>
+   <article class="detail"><img src="https://www.klikploce.com.hr/kl1k_c/uploads/2024/06/FB_IMG_1719122378378-1024x1017.jpg" alt="Kupalište Bililo uz rijeku Trebižat" loading="lazy" onerror="this.style.display='none'"><h3>Kupalište Bililo</h3><p>Ugodno mjesto uz rijeku Trebižat za predah, osvježenje i uživanje u prirodnom ambijentu.</p><p style="margin-top:12px"><a href="https://visitljubuski.com/gastro-ponuda-u-ljubuskom/" target="_blank" rel="noopener">Turističke informacije</a> · <a href="https://www.google.com/maps/search/?api=1&query=Kupali%C5%A1te+Bililo+Ljubu%C5%A1ki" target="_blank" rel="noopener">Karta</a></p></article>
    <article class="detail"><img src="https://www.nedjelja.ba/upload/image/Multimedija/Foto%20dana/2025/07/Rijeka-Trebizat.jpg" alt="Slapovi na rijeci Trebižat kod Čeveljuše" loading="lazy" onerror="this.style.display='none'"><h3>Čeveljuša – Mandića jaz</h3><p>Restoran i prirodni ambijent uz vodu, dobar izbor za odmor i lokalnu gastronomiju.</p><p style="margin-top:12px"><a href="https://www.facebook.com/ceveljusa/?locale=hr_HR" target="_blank" rel="noopener">Stranica lokacije</a> · <a href="https://www.google.com/maps/search/?api=1&query=Cevelju%C5%A1a+Mandi%C4%87a+jaz+Ljubu%C5%A1ki" target="_blank" rel="noopener">Karta</a></p></article>
 
    <article class="detail"><h3>Još ideja za izlet</h3><p>Na službenoj stranici Turističke zajednice možete pronaći dodatne prijedloge za aktivnosti, gastronomiju i znamenitosti.</p><p style="margin-top:12px"><a href="https://visitljubuski.com/" target="_blank" rel="noopener">Visit Ljubuški</a></p></article>
@@ -193,7 +193,7 @@ footer{padding-top:24px}
  </div>
 </section>
 </main>
-<footer class="wrap"><p>Robert &amp; Iva · 28. svibnja 2027.</p><p>S radošću iščekujemo proslavu s vama.</p></footer>
+<footer class="wrap"><div class="ornament" aria-hidden="true"></div><p style="font-size:22px;color:#51483e;font-style:italic;margin:0 0 4px">„Sve vaše neka bude u ljubavi!”</p><p style="font:11px Arial,sans-serif;letter-spacing:.12em;text-transform:uppercase;margin:0 0 22px">1. Korinćanima 16, 14</p><p>Robert &amp; Iva · 28. svibnja 2027.</p><p>S radošću iščekujemo proslavu s vama.</p></footer>
 <script>
 /* Nakon postavljanja Apps Script web-aplikacije zalijepite njezin URL ovdje. */
 const SUBMISSION_URL = "https://script.google.com/macros/s/AKfycbyIQbMzmt3IP46IahvDutCZOw6pM1PWTwOdW1wmqAG5t5K0yFCKhcWh7wTtGbHyJSNzpw/exec";

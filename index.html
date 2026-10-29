@@ -72,8 +72,10 @@ footer{text-align:center;padding:10px 0 42px;color:var(--muted);font-size:13px}
     <div class="rsvp">
       <h2 style="font-size:27px">Potvrda dolaska i smještaj</h2>
       <p>Označite trebate li smještaj te odaberite noćenje 27. – 28. svibnja, 28. – 29. svibnja ili obje noći.</p>
-      <a class="btn" href="#" id="rsvp-button">Potvrdi dolazak</a>
-      <p class="note" id="rsvp-note" style="margin-top:14px">Obrazac još nije povezan. Slijedite upute iz datoteke UPUTE-PRVO-OVO-PROCITAJTE.txt.</p>
+      <div class="form-embed" style="width:100%;overflow:hidden;border-radius:4px;background:#fffdf9">
+        <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdchtX5Kv4WxzDztXARfSNBqhT4_CJokLulQDNIbPi6ynft3Q/viewform?embedded=true" title="Obrazac za potvrdu dolaska i smještaj" width="100%" height="1450" frameborder="0" marginheight="0" marginwidth="0" style="display:block;width:100%;max-width:100%;border:0;min-height:1450px;background:#fffdf9">Učitavanje…</iframe>
+      </div>
+      <p class="note" style="margin-top:14px">Ispunite obrazac izravno ovdje na pozivnici. Vaš odgovor sprema se u našu evidenciju.</p>
     </div>
   </section>
 </main>
@@ -81,22 +83,6 @@ footer{text-align:center;padding:10px 0 42px;color:var(--muted);font-size:13px}
   <p>Robert &amp; Iva · 28. svibnja 2027.</p>
   <p>S radošću iščekujemo proslavu s vama.</p>
 </footer>
-<script>
-/* Nakon izrade Google obrasca zalijepite njegov URL između navodnika. */
-const RSVP_FORM_URL = "https://docs.google.com/forms/d/e/1FAIpQLSdchtX5Kv4WxzDztXARfSNBqhT4_CJokLulQDNIbPi6ynft3Q/viewform?usp=dialog";
-const button = document.getElementById("rsvp-button");
-const note = document.getElementById("rsvp-note");
-if (RSVP_FORM_URL.trim()) {
-  button.href = RSVP_FORM_URL;
-  button.target = "_blank";
-  button.rel = "noopener";
-  note.textContent = "Kliknite gumb za otvaranje obrasca za potvrdu dolaska i smještaj.";
-} else {
-  button.addEventListener("click", function(event) {
-    event.preventDefault();
-    alert("Obrazac još nije povezan. Otvorite vodič UPUTE-PRVO-OVO-PROCITAJTE.txt i slijedite korake.");
-  });
-}
-</script>
+
 </body>
 </html>

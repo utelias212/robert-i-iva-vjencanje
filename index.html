@@ -130,7 +130,7 @@ function updateConditionalFields(){
   accommodationRadios.forEach(x=>{x.required=false;x.checked=false;});
  }
  nightsField.hidden=!(isAttending && accommodation==='Da');
- document.querySelectorAll('input[name="nights"]').forEach(x=>{x.required=!nightsField.hidden; if(nightsField.hidden)x.checked=false;});
+ document.querySelectorAll('input[name="nights"]').forEach(x=>{x.required=false; if(nightsField.hidden)x.checked=false;});
  if(!isAttending){document.getElementById('accommodation-field').hidden=true;}
  else {document.getElementById('accommodation-field').hidden=false;accommodationRadios.forEach(x=>x.required=true);}
 }
@@ -147,6 +147,10 @@ form.addEventListener('submit',async e=>{
  e.preventDefault();
  const status=document.getElementById('status');
  const btn=document.getElementById('submit-btn');
+ const isAttending=document.querySelector('input[name="attending"]:checked')?.value==='Da, dolazim';
+ const needsAccommodation=document.querySelector('input[name="accommodation"]:checked')?.value==='Da';
+ const selectedNights=[...document.querySelectorAll('input[name="nights"]:checked')];
+ if(isAttending && needsAccommodation && selectedNights.length===0){status.textContent='Molimo odaberite barem jednu mogućnost noćenja.'; document.getElementById('nights-field').scrollIntoView({behavior:'smooth',block:'center'}); return;}
  if(SUBMISSION_URL==='PASTE_APPS_SCRIPT_WEB_APP_URL_HERE'){
   status.textContent='Obrazac je spreman, ali još ga treba povezati s tablicom. Slijedite UPUTE za postavljanje.';
   return;

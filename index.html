@@ -82,13 +82,30 @@ footer{text-align:center;padding:10px 0 42px;color:var(--muted);font-size:13px}
      <label class="choice"><input type="radio" name="accommodation" value="Ne" required> Ne</label>
     </div></fieldset>
     <fieldset id="nights-field" hidden style="border:0;padding:0;margin:0"><legend class="legend">Za koje noći trebate smještaj? *</legend><div class="checks">
-     <label class="choice"><input type="checkbox" name="nights" value="27.–28. svibnja 2027."> Noć 27. na 28. svibnja 2027.</label>
-     <label class="choice"><input type="checkbox" name="nights" value="28.–29. svibnja 2027."> Noć 28. na 29. svibnja 2027.</label>
+     <label class="choice"><input type="checkbox" name="nights" value="27.–28. svibnja 2027." data-night="first"> Noć 27. na 28. svibnja 2027.</label>
+     <label class="choice"><input type="checkbox" name="nights" value="28.–29. svibnja 2027." data-night="second"> Noć 28. na 29. svibnja 2027.</label>
+     <label class="choice"><input type="checkbox" name="nights" value="Obje noći (27.–28. i 28.–29. svibnja 2027.)" data-night="both"> Obje noći — 27. i 28. svibnja</label>
     </div><p class="small">Možete označiti obje noći. Ovo je iskaz interesa, ne potvrda rezervacije.</p></fieldset>
     <div class="form-actions"><button class="btn" id="submit-btn" type="submit">Potvrdi dolazak</button></div>
     <p class="status" id="status" role="status" aria-live="polite"></p>
    </form>
   </div>
+ </div>
+</section>
+<section id="atrakcije">
+ <div class="wrap">
+  <div class="kicker">Ako ostajete malo duže</div>
+  <h2>Otkrijte Ljubuški i okolicu</h2>
+  <p class="lead">Ako imate vremena prije ili nakon slavlja, izdvojili smo nekoliko lijepih mjesta za istraživanje Hercegovine.</p>
+  <div class="details">
+   <article class="detail"><h3>Vodopad Kravica</h3><p>Prepoznatljivi slapovi na rijeci Trebižat, okruženi zelenilom — posebno lijepi za šetnju i fotografije.</p><p style="margin-top:12px"><a href="https://kravica.ba/" target="_blank" rel="noopener">Službene informacije</a> · <a href="https://www.google.com/maps/search/?api=1&query=Vodopad+Kravica+Ljubu%C5%A1ki" target="_blank" rel="noopener">Karta</a></p></article>
+   <article class="detail"><h3>Vodopad Koćuša</h3><p>Širok, slikovit slap u Veljacima, uz stare mlinove i ugodan krajolik za kraći izlet.</p><p style="margin-top:12px"><a href="https://visitljubuski.com/natural-sights/" target="_blank" rel="noopener">Turističke informacije</a> · <a href="https://www.google.com/maps/search/?api=1&query=Vodopad+Ko%C4%87u%C5%A1a+Veljaci" target="_blank" rel="noopener">Karta</a></p></article>
+   <article class="detail"><h3>Tvrđava hercega Stjepana</h3><p>Povijesna tvrđava iznad grada s pogledom na Ljubuški i okolni krajolik.</p><p style="margin-top:12px"><a href="https://visitljubuski.com/explore-ljubuski/" target="_blank" rel="noopener">Turističke informacije</a> · <a href="https://www.google.com/maps/search/?api=1&query=Tvr%C4%91ava+Herceg+Stjepan+Ljubu%C5%A1ki" target="_blank" rel="noopener">Karta</a></p></article>
+   <article class="detail"><h3>Muzej na Humcu</h3><p>Arheološka i kulturna baština Hercegovine, uključujući poznatu Humačku ploču.</p><p style="margin-top:12px"><a href="https://visitljubuski.com/explore-ljubuski/" target="_blank" rel="noopener">Turističke informacije</a> · <a href="https://www.google.com/maps/search/?api=1&query=Muzej+Humac+Ljubu%C5%A1ki" target="_blank" rel="noopener">Karta</a></p></article>
+   <article class="detail"><h3>Rimski logor Gračine</h3><p>Ostaci rimskog vojnog kompleksa za one koji vole povijest i arheologiju.</p><p style="margin-top:12px"><a href="https://visitljubuski.com/explore-ljubuski/" target="_blank" rel="noopener">Turističke informacije</a> · <a href="https://www.google.com/maps/search/?api=1&query=Rimski+logor+Gra%C4%8Dine+Ljubu%C5%A1ki" target="_blank" rel="noopener">Karta</a></p></article>
+   <article class="detail"><h3>Još ideja za izlet</h3><p>Na službenoj stranici Turističke zajednice možete pronaći dodatne prijedloge za aktivnosti, gastronomiju i znamenitosti.</p><p style="margin-top:12px"><a href="https://visitljubuski.com/" target="_blank" rel="noopener">Visit Ljubuški</a></p></article>
+  </div>
+  <p class="small" style="margin-top:18px">Provjerite radno vrijeme, ulaznice i uvjete posjeta prije polaska jer se mogu mijenjati ovisno o sezoni.</p>
  </div>
 </section>
 </main>
@@ -106,13 +123,24 @@ function updateConditionalFields(){
  const attending=document.querySelector('input[name="attending"]:checked')?.value||'';
  const accommodation=document.querySelector('input[name="accommodation"]:checked')?.value||'';
  const isAttending=attending==='Da, dolazim';
- companionsField.hidden=!isAttending; dietField.hidden=!isAttending; 
- if(!isAttending){document.getElementById('companions').value='';document.getElementById('diet').value='';}
+ companionsField.hidden=!isAttending; dietField.hidden=!isAttending;
+ if(!isAttending){
+  document.getElementById('companions').value='';
+  document.getElementById('diet').value='';
+  accommodationRadios.forEach(x=>{x.required=false;x.checked=false;});
+ }
  nightsField.hidden=!(isAttending && accommodation==='Da');
  document.querySelectorAll('input[name="nights"]').forEach(x=>{x.required=!nightsField.hidden; if(nightsField.hidden)x.checked=false;});
- if(!isAttending){accommodationRadios.forEach(x=>x.required=false);document.getElementById('accommodation-field').hidden=true;}
+ if(!isAttending){document.getElementById('accommodation-field').hidden=true;}
  else {document.getElementById('accommodation-field').hidden=false;accommodationRadios.forEach(x=>x.required=true);}
 }
+document.querySelectorAll('input[name="nights"]').forEach(x=>x.addEventListener('change',()=>{
+ const all=[...document.querySelectorAll('input[name="nights"]')];
+ const both=all.find(n=>n.dataset.night==='both');
+ const individuals=all.filter(n=>n.dataset.night==='first'||n.dataset.night==='second');
+ if(x.dataset.night==='both' && x.checked) individuals.forEach(n=>n.checked=false);
+ else if((x.dataset.night==='first'||x.dataset.night==='second') && x.checked) both.checked=false;
+}));
 attendingRadios.forEach(x=>x.addEventListener('change',updateConditionalFields));
 accommodationRadios.forEach(x=>x.addEventListener('change',updateConditionalFields));
 form.addEventListener('submit',async e=>{

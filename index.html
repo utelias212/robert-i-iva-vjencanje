@@ -11,10 +11,10 @@
 *{box-sizing:border-box}html{scroll-behavior:smooth}
 body{margin:0;background:var(--paper);color:var(--ink);font-family:Georgia,"Times New Roman",serif;line-height:1.7}
 a{color:inherit}.wrap{width:min(100% - 32px,760px);margin:auto}
-.hero{min-height:78vh;display:grid;place-items:center;padding:56px 0;text-align:center;position:relative;overflow:hidden}
-.hero:before,.hero:after{content:"";position:absolute;width:190px;height:300px;border:1px solid #d9cebd;border-radius:100% 0 100% 0;opacity:.6;transform:rotate(28deg);pointer-events:none}
+.hero{min-height:82vh;display:grid;place-items:center;padding:56px 0;text-align:center;position:relative;overflow:hidden;color:#fff;background:linear-gradient(135deg,rgba(34,29,24,.48),rgba(34,29,24,.66)),url("https://visitljubuski.com/wp-content/uploads/bigeste.jpg") center 48%/cover no-repeat}
+.hero:before,.hero:after{content:"";position:absolute;width:190px;height:300px;border:1px solid #d9cebd;border-radius:100% 0 100% 0;opacity:.6;transform:rotate(28deg);pointer-events:none;display:none}
 .hero:before{left:-120px;top:60px}.hero:after{right:-120px;bottom:40px;transform:rotate(208deg)}
-.kicker{font:600 11px/1.4 Arial,sans-serif;letter-spacing:.25em;text-transform:uppercase;color:var(--muted)}
+.kicker{font:600 11px/1.4 Arial,sans-serif;letter-spacing:.25em;text-transform:uppercase;color:var(--muted)}.hero .kicker{color:#f5eee4}.hero .amp{color:#e7d4b8}.hero .ornament{background:rgba(255,255,255,.65)}.hero .lead{color:#f5eee4}.hero .btn{background:#f8f5ef;color:#51483e}
 .ornament{width:86px;height:1px;background:var(--line);margin:24px auto}
 h1{font-size:clamp(48px,10vw,84px);font-weight:400;line-height:1.05;letter-spacing:-.045em;margin:22px 0}
 .amp{font-style:italic;color:var(--accent);font-size:.7em}.date{font-size:19px;letter-spacing:.12em}
@@ -22,7 +22,7 @@ h1{font-size:clamp(48px,10vw,84px);font-weight:400;line-height:1.05;letter-spaci
 .btn{display:inline-block;text-decoration:none;background:var(--ink);color:var(--card);padding:12px 22px;border:0;border-radius:3px;font:600 11px/1.5 Arial,sans-serif;letter-spacing:.13em;text-transform:uppercase;cursor:pointer}
 section{padding:58px 0;text-align:center;border-top:1px solid var(--line)}h2{font-size:32px;font-weight:400;margin:10px 0 20px}
 .details{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:28px}
-.detail{padding:24px 16px;background:var(--card);border:1px solid var(--line)}.detail h3{font-size:21px;font-weight:400;margin:0 0 8px}.detail p{margin:0;color:var(--muted);font-size:14px}.time{font-size:24px!important;color:var(--ink)!important;margin:10px 0!important}
+.detail{padding:0 0 22px;background:var(--card);border:1px solid var(--line);overflow:hidden}.detail h3{padding:0 16px}.detail p{padding-left:16px;padding-right:16px}.detail img{display:block;width:100%;height:190px;object-fit:cover;margin:0 0 18px}.detail .detail-links{padding:0 16px}.detail .detail-links a{font-size:13px}.detail h3{font-size:21px;font-weight:400;margin:0 0 8px}.detail p{margin:0;color:var(--muted);font-size:14px}.time{font-size:24px!important;color:var(--ink)!important;margin:10px 0!important}
 .rsvp{background:#eee7dc;padding:34px 20px;margin:0 auto 48px;max-width:650px}
 .form-grid{max-width:500px;margin:0 auto;text-align:left;display:grid;gap:17px}
 .field label,.legend{display:block;font-size:15px;font-weight:600;margin-bottom:6px}
@@ -38,7 +38,7 @@ textarea{min-height:88px;resize:vertical}
 .form-actions{text-align:center;margin-top:8px}.status{font:13px/1.6 Arial,sans-serif;text-align:center;color:var(--muted);min-height:22px}
 footer{text-align:center;padding:10px 0 42px;color:var(--muted);font-size:13px}
 [hidden]{display:none!important}
-@media(max-width:520px){.details{grid-template-columns:1fr}.hero{min-height:75vh}.hero:before,.hero:after{opacity:.3}.rsvp{padding:28px 16px}.choices{flex-direction:column}.choice{flex:none}}
+@media(max-width:520px){.details{grid-template-columns:1fr}.hero{min-height:78vh;background-position:57% center}.hero:before,.hero:after{opacity:.3}.rsvp{padding:28px 16px}.choices{flex-direction:column}.choice{flex:none}.detail img{height:205px}}
 </style>
 </head>
 <body>
@@ -98,14 +98,14 @@ footer{text-align:center;padding:10px 0 42px;color:var(--muted);font-size:13px}
   <h2>Otkrijte Ljubuški i okolicu</h2>
   <p class="lead">Ako imate vremena prije ili nakon slavlja, izdvojili smo nekoliko lijepih mjesta za istraživanje Hercegovine.</p>
   <div class="details">
-   <article class="detail"><h3>Vodopad Kravica</h3><p>Prepoznatljivi slapovi na rijeci Trebižat, okruženi zelenilom — posebno lijepi za šetnju i fotografije.</p><p style="margin-top:12px"><a href="https://kravica.ba/" target="_blank" rel="noopener">Službene informacije</a> · <a href="https://www.google.com/maps/search/?api=1&query=Vodopad+Kravica+Ljubu%C5%A1ki" target="_blank" rel="noopener">Karta</a></p></article>
-   <article class="detail"><h3>Vodopad Koćuša</h3><p>Širok, slikovit slap u Veljacima, uz stare mlinove i ugodan krajolik za kraći izlet.</p><p style="margin-top:12px"><a href="https://visitljubuski.com/natural-sights/" target="_blank" rel="noopener">Turističke informacije</a> · <a href="https://www.google.com/maps/search/?api=1&query=Vodopad+Ko%C4%87u%C5%A1a+Veljaci" target="_blank" rel="noopener">Karta</a></p></article>
-   <article class="detail"><h3>Tvrđava hercega Stjepana</h3><p>Povijesna tvrđava iznad grada s pogledom na Ljubuški i okolni krajolik.</p><p style="margin-top:12px"><a href="https://visitljubuski.com/explore-ljubuski/" target="_blank" rel="noopener">Turističke informacije</a> · <a href="https://www.google.com/maps/search/?api=1&query=Tvr%C4%91ava+Herceg+Stjepan+Ljubu%C5%A1ki" target="_blank" rel="noopener">Karta</a></p></article>
+   <article class="detail"><img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/8/86/Slapovi_Kravice.jpg/960px-Slapovi_Kravice.jpg" alt="Vodopad Kravica u zelenilu" loading="lazy"><h3>Vodopad Kravica</h3><p>Prepoznatljivi slapovi na rijeci Trebižat, okruženi zelenilom — posebno lijepi za šetnju i fotografije.</p><p style="margin-top:12px"><a href="https://kravica.ba/" target="_blank" rel="noopener">Službene informacije</a> · <a href="https://www.google.com/maps/search/?api=1&query=Vodopad+Kravica+Ljubu%C5%A1ki" target="_blank" rel="noopener">Karta</a></p></article>
+   <article class="detail"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/52/Kocusa.jpg/960px-Kocusa.jpg" alt="Široki slapovi vodopada Koćuša" loading="lazy"><h3>Vodopad Koćuša</h3><p>Širok, slikovit slap u Veljacima, uz stare mlinove i ugodan krajolik za kraći izlet.</p><p style="margin-top:12px"><a href="https://visitljubuski.com/natural-sights/" target="_blank" rel="noopener">Turističke informacije</a> · <a href="https://www.google.com/maps/search/?api=1&query=Vodopad+Ko%C4%87u%C5%A1a+Veljaci" target="_blank" rel="noopener">Karta</a></p></article>
+   <article class="detail"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Stari_grad_Ljubuski_01.jpg/1024px-Stari_grad_Ljubuski_01.jpg" alt="Povijesna tvrđava iznad Ljubuškog" loading="lazy"><h3>Tvrđava hercega Stjepana</h3><p>Povijesna tvrđava iznad grada s pogledom na Ljubuški i okolni krajolik.</p><p style="margin-top:12px"><a href="https://visitljubuski.com/explore-ljubuski/" target="_blank" rel="noopener">Turističke informacije</a> · <a href="https://www.google.com/maps/search/?api=1&query=Tvr%C4%91ava+Herceg+Stjepan+Ljubu%C5%A1ki" target="_blank" rel="noopener">Karta</a></p></article>
    <article class="detail"><h3>Muzej na Humcu</h3><p>Arheološka i kulturna baština Hercegovine, uključujući poznatu Humačku ploču.</p><p style="margin-top:12px"><a href="https://visitljubuski.com/explore-ljubuski/" target="_blank" rel="noopener">Turističke informacije</a> · <a href="https://www.google.com/maps/search/?api=1&query=Muzej+Humac+Ljubu%C5%A1ki" target="_blank" rel="noopener">Karta</a></p></article>
    <article class="detail"><h3>Rimski logor Gračine</h3><p>Ostaci rimskog vojnog kompleksa za one koji vole povijest i arheologiju.</p><p style="margin-top:12px"><a href="https://visitljubuski.com/explore-ljubuski/" target="_blank" rel="noopener">Turističke informacije</a> · <a href="https://www.google.com/maps/search/?api=1&query=Rimski+logor+Gra%C4%8Dine+Ljubu%C5%A1ki" target="_blank" rel="noopener">Karta</a></p></article>
    <article class="detail"><h3>Još ideja za izlet</h3><p>Na službenoj stranici Turističke zajednice možete pronaći dodatne prijedloge za aktivnosti, gastronomiju i znamenitosti.</p><p style="margin-top:12px"><a href="https://visitljubuski.com/" target="_blank" rel="noopener">Visit Ljubuški</a></p></article>
   </div>
-  <p class="small" style="margin-top:18px">Provjerite radno vrijeme, ulaznice i uvjete posjeta prije polaska jer se mogu mijenjati ovisno o sezoni.</p>
+  <p class="small" style="margin-top:18px">Provjerite radno vrijeme, ulaznice i uvjete posjeta prije polaska jer se mogu mijenjati ovisno o sezoni.</p><p class="small" style="margin-top:10px">Fotografije: Hotel Bigeste / Turistička zajednica Ljubuškog i Wikimedia Commons — <a href="https://commons.wikimedia.org/wiki/File:Slapovi_Kravice.jpg" target="_blank" rel="noopener">Kravica</a>, <a href="https://commons.wikimedia.org/wiki/File:Kocusa.jpg" target="_blank" rel="noopener">Koćuša</a>, <a href="https://commons.wikimedia.org/wiki/File:Stari_grad_Ljubuski_01.jpg" target="_blank" rel="noopener">Tvrđava</a>.</p>
  </div>
 </section>
 </main>

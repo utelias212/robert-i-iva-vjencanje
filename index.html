@@ -97,19 +97,61 @@ footer{padding-top:24px}
  #kontakti .contact-card{padding:22px 16px}
 }
 
+/* TRUE LOVE-inspired redesign: romantic, airy, editorial and mobile-first. */
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Great+Vibes&display=swap');
+:root{--paper:#fbf8f1;--ink:#514b3e;--muted:#7b7668;--line:#d9d6c8;--card:#fffdf8;--accent:#9b9a7a;--sage:#858d70;--rose:#b28e80}
+body{background:var(--paper);color:var(--ink);font-family:'Cormorant Garamond',Georgia,serif;font-size:18px;line-height:1.65}
+.wrap{width:min(100% - 36px,780px)}
+.hero{min-height:92svh;padding:68px 0 58px;background:linear-gradient(180deg,rgba(35,37,27,.37),rgba(35,37,27,.55)),url("https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=2000&q=85") center 48%/cover no-repeat}
+.hero .wrap{max-width:760px;padding:36px 24px 32px;border:1px solid rgba(250,245,230,.56);background:rgba(36,37,29,.15)}
+.hero .kicker{max-width:430px;margin:0 auto;color:#f6efe4;font-size:12px;letter-spacing:.16em;line-height:1.9}
+.hero h1{font-family:'Great Vibes','Cormorant Garamond',cursive;font-size:clamp(76px,15vw,128px);font-weight:400;letter-spacing:0;line-height:1.12;margin:24px 0 16px;text-shadow:0 3px 18px rgba(0,0,0,.16)}
+.hero .amp{font-family:'Cormorant Garamond',serif;font-size:.66em;font-style:italic;color:#e9d7c1}
+.hero .ornament{width:100px;background:#e7d8c5;margin:20px auto}.hero-invite{font-size:clamp(23px,5vw,30px);line-height:1.25;margin:0 auto 18px;color:#fff9f0;font-weight:400}
+.hero .date{font-family:'Cormorant Garamond',serif;font-size:24px;letter-spacing:.1em;text-transform:uppercase;color:#f5e9d9}.hero .lead{font-size:20px;color:#f6efe4;margin:18px auto 0}
+.hero .btn{border-radius:0;min-height:50px;padding:13px 21px;letter-spacing:.09em;font-size:11px}.hero .btn:first-child{background:#f8f4eb;color:#555443}.hero .btn:last-child{background:#d9c3b4!important;color:#51483e!important}
+section{padding:78px 0;border-top:0;text-align:center}h2{font-size:clamp(37px,7vw,50px);font-weight:400;line-height:1.1;margin:14px 0 22px;color:var(--ink)}
+.kicker{font-family:Arial,sans-serif;font-size:10px;letter-spacing:.24em;color:var(--sage);font-weight:500;text-transform:uppercase}.lead{font-size:21px;line-height:1.5;color:var(--muted);max-width:570px}.btn{border-radius:0;box-shadow:none}
+#detalji{background:#fbf8f1;padding:78px 0 66px;color:var(--ink)}#detalji .kicker{color:var(--sage)}#detalji h2{font-size:clamp(40px,8vw,54px);margin-bottom:34px}#detalji .details{max-width:600px}
+#detalji .detail{padding:29px 8px 34px}#detalji .detail h3{font-size:clamp(28px,6vw,36px);color:#8d9277;margin-bottom:10px}#detalji .detail p{font-size:19px;color:var(--muted)}#detalji .detail p:first-of-type{font-size:24px;color:var(--ink);line-height:1.25}#detalji .detail .time{font-size:35px!important;color:#777e62!important;margin:16px 0 8px!important}
+#detalji .detail>a{border:1px solid #a6a68e;background:transparent;color:#686d55;border-radius:0;min-height:46px;font-size:11px;letter-spacing:.12em}#detalji .detail>a:hover{background:#ecebdd}
+.photo-break{min-height:340px;display:grid;place-items:center;padding:48px 20px;background:linear-gradient(rgba(38,40,30,.3),rgba(38,40,30,.42)),url("https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1800&q=85") center 58%/cover no-repeat;color:#fffaf1;text-align:center}.photo-break-inner{max-width:580px;padding:28px 34px;border:1px solid rgba(255,250,240,.65)}.photo-break p{font-family:'Great Vibes','Cormorant Garamond',cursive;font-size:clamp(48px,10vw,70px);line-height:1.05;margin:0 0 8px}.photo-break span{font-size:20px;letter-spacing:.05em}
+.countdown-section{background:#eeeee3;padding:54px 0 62px}.countdown-section .kicker{color:#858d70}.countdown-title{font-size:clamp(29px,6vw,40px);margin:10px 0}.countdown-grid{gap:0;max-width:500px}.countdown-unit{background:transparent;border:0;border-right:1px solid #d1d2c2;padding:18px 8px}.countdown-unit:last-child{border-right:0}.countdown-number{font-family:'Cormorant Garamond',serif;font-size:clamp(42px,9vw,55px);color:#737b5e}.countdown-label{font-size:10px;color:#777766;letter-spacing:.18em}
+#rsvp{background:#f8f4ec;padding:80px 0}#rsvp .kicker{color:var(--sage)}#rsvp h2{margin-bottom:18px}.rsvp{background:#fffdf8;border:1px solid #ded8c9;border-radius:0;box-shadow:none;padding:clamp(24px,5vw,44px);margin-top:32px}.rsvp>h2{font-family:'Great Vibes','Cormorant Garamond',cursive;font-size:42px!important;color:#858d70}.form-grid{gap:19px}.field label,.legend{font-family:'Cormorant Garamond',Georgia,serif;font-size:19px;color:#514b3e;font-weight:600}
+input[type=text],textarea,select{border-radius:0;background:#fbf8f1;border-color:#d9d6c8;font-family:Arial,sans-serif;font-size:16px}.choice{border-radius:0;background:#fbf8f1;border-color:#ded8c9;font-size:14px}.choice:has(input:checked){border-color:#858d70;background:#f0f0e6}.choice input{accent-color:#858d70}.form-actions .btn{background:#858d70;min-width:230px;min-height:54px}.form-actions .btn:hover{background:#6f775b}
+#atrakcije{background:#eeeee3;padding:78px 0}#atrakcije .kicker,#kontakti .kicker{color:#858d70}#atrakcije h2,#kontakti h2{color:#514b3e}#atrakcije .details{gap:18px}#atrakcije .detail{border:1px solid #dedccd;border-radius:0;background:#fbf8f1;box-shadow:none}#atrakcije .detail img{height:220px}#atrakcije .detail h3{font-size:clamp(21px,4vw,27px);color:#555744}#atrakcije .detail p{font-size:16px}#atrakcije .detail p:last-of-type a:last-child{border-radius:0;background:#f1f0e6;border-color:#d0d1bf;color:#62694e}
+#kontakti{background:#fbf8f1;padding:76px 0}#kontakti .contact-card{border:1px solid #ded8c9;border-radius:0;background:#fffdf8;box-shadow:none;padding:30px 18px}#kontakti .contact-mark{border-radius:50%;background:#eeeee3;color:#737b5e;font-family:'Great Vibes',cursive;font-size:30px;font-style:normal;width:54px;height:54px}#kontakti .contact-card h3{font-size:29px}#kontakti .contact-role{color:#858d70!important}#kontakti .contact-phone{border-radius:0;border-color:#a6a68e;background:#f4f3e9;color:#60674d;min-height:46px;font-size:15px}
+footer{max-width:none!important;padding:46px 18px 48px;background:#eeeee3;color:#777766}footer .ornament{background:#b6b7a3;width:72px;margin:0 auto 22px}footer p[style*="font-size:22px"]{font-family:'Great Vibes','Cormorant Garamond',cursive;font-size:38px!important;color:#727a5d!important}footer p[style*="font:11px"]{letter-spacing:.18em!important;color:#7f836c}
+@media(max-width:520px){.hero{min-height:90svh;padding:30px 0}.hero .wrap{padding:28px 15px}.hero h1{font-size:clamp(70px,17vw,98px);margin:21px 0 14px}.hero .kicker{font-size:10px;letter-spacing:.15em}.hero .date{font-size:20px}.hero .lead{font-size:18px}.hero .wrap>div[style*="display:flex"]{gap:9px!important;margin-top:23px!important}.hero .btn{padding:12px 14px;font-size:10px;letter-spacing:.06em}section{padding:58px 0}#detalji{padding:60px 0 52px}#detalji .detail{padding:25px 4px 29px}#detalji .detail p:first-of-type{font-size:22px}#detalji .detail p{font-size:18px}.photo-break{min-height:270px}.photo-break-inner{padding:24px 16px}.photo-break span{font-size:17px}.countdown-section{padding:42px 0 48px}.countdown-grid{gap:0}.countdown-unit{padding:15px 3px}#rsvp{padding:58px 0}.rsvp{padding:24px 15px}#atrakcije{padding:58px 0}#atrakcije .details{grid-template-columns:repeat(2,minmax(0,1fr));gap:11px}#atrakcije .detail img{height:142px}#atrakcije .detail h3{font-size:19px;padding:0 10px}#atrakcije .detail p{font-size:13px;padding:0 10px;line-height:1.55}#kontakti{padding:58px 0}#kontakti .details{grid-template-columns:1fr;max-width:360px}}
+
 </style>
 </head>
 <body>
 <header class="hero">
  <div class="wrap">
-  <div class="kicker">S radošću vas pozivamo</div>
+  <div class="kicker">Vi ste dio našeg života, budite i dio našeg slavlja</div>
   <h1>Robert <span class="amp">&</span> Iva</h1>
   <div class="ornament"></div>
-  <div class="date">28. SVIBNJA 2027.</div>
-  <p class="lead">Jedan poseban dan, a još ljepši kad ga dijelimo s vama.</p>
+  <p class="hero-invite">S veseljem vas pozivamo na naše vjenčanje</p>
+  <div class="date">28. svibnja 2027.</div>
+  <p class="lead">Bit će nam posebno drago podijeliti ovaj dan s vama.</p>
   <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:28px"><a class="btn" href="#detalji">Detalji vjenčanja</a><a class="btn" href="#rsvp" style="background:#ead8cb;color:#51483e">Potvrdi dolazak</a></div>
  </div>
 </header>
+
+<main>
+<section id="detalji">
+ <div class="wrap">
+  <div class="kicker">Veselimo se zajedničkom slavlju</div><h2>Gdje i kada</h2>
+  <div class="details">
+   <article class="detail"><h3>Okupljanje</h3><p>Hotel Bigeste</p><p>Ljubuški</p><p class="time">16:00</p><a href="https://www.google.com/maps/search/?api=1&query=Hotel+Bigeste+Ljubu%C5%A1ki" target="_blank" rel="noopener">Otvori lokaciju</a></article>
+   <article class="detail"><h3>Vjenčana ceremonija</h3><p>Katolička crkva Svetog Ante Padovanskog</p><p>Ljubuški</p><p class="time">18:00</p><a href="https://www.google.com/maps/search/?api=1&query=Katoli%C4%8Dka+crkva+Svetog+Ante+Padovanskog+Ljubu%C5%A1ki" target="_blank" rel="noopener">Otvori lokaciju</a></article>
+   <article class="detail"><h3>Večera i svadbeno slavlje</h3><p>Hotel Bigeste</p><p>Ljubuški</p><p class="time">20:00</p><a href="https://www.google.com/maps/search/?api=1&query=Hotel+Bigeste+Ljubu%C5%A1ki" target="_blank" rel="noopener">Otvori lokaciju</a></article>
+  </div>
+ </div>
+</section>
+
+<section class="photo-break" aria-label="Radujemo se zajedničkom slavlju"><div class="photo-break-inner"><p>Jedva čekamo</p><span>da ovaj dan podijelimo s vama</span></div></section>
 <section class="countdown-section" aria-label="Odbrojavanje do vjenčanja">
  <div class="wrap">
   <div class="kicker" style="text-align:center">Naš poseban dan se približava</div>
@@ -119,17 +161,6 @@ footer{padding-top:24px}
    <div class="countdown-unit"><span class="countdown-number" id="count-days">—</span><span class="countdown-label">Dana</span></div>
    <div class="countdown-unit"><span class="countdown-number" id="count-hours">—</span><span class="countdown-label">Sati</span></div>
    <div class="countdown-unit"><span class="countdown-number" id="count-minutes">—</span><span class="countdown-label">Minuta</span></div>
-  </div>
- </div>
-</section>
-<main>
-<section id="detalji">
- <div class="wrap">
-  <div class="kicker">Veselimo se zajedničkom slavlju</div><h2>Gdje i kada</h2>
-  <div class="details">
-   <article class="detail"><h3>Okupljanje</h3><p>Hotel Bigeste</p><p>Ljubuški</p><p class="time">16:00</p><a href="https://www.google.com/maps/search/?api=1&query=Hotel+Bigeste+Ljubu%C5%A1ki" target="_blank" rel="noopener">Otvori lokaciju</a></article>
-   <article class="detail"><h3>Vjenčana ceremonija</h3><p>Katolička crkva Svetog Ante Padovanskog</p><p>Ljubuški</p><p class="time">18:00</p><a href="https://www.google.com/maps/search/?api=1&query=Katoli%C4%8Dka+crkva+Svetog+Ante+Padovanskog+Ljubu%C5%A1ki" target="_blank" rel="noopener">Otvori lokaciju</a></article>
-   <article class="detail"><h3>Večera i svadbeno slavlje</h3><p>Hotel Bigeste</p><p>Ljubuški</p><p class="time">20:00</p><a href="https://www.google.com/maps/search/?api=1&query=Hotel+Bigeste+Ljubu%C5%A1ki" target="_blank" rel="noopener">Otvori lokaciju</a></article>
   </div>
  </div>
 </section>

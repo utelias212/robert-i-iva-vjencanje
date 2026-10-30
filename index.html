@@ -263,6 +263,19 @@ footer p[style*="font-size:22px"]{font-family:'Great Vibes','Cormorant Garamond'
   }
 }
 
+
+/* Atrakcije: četiri slikovne kartice u 2x2 rasporedu; dodatne ideje ispod svih. */
+#atrakcije .details{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
+#atrakcije .details > article.detail:not(.more-idea){grid-column:auto!important;grid-row:auto!important;width:auto!important;max-width:none!important}
+#atrakcije .details > article.more-idea{grid-column:1 / -1!important;grid-row:auto!important;width:auto!important;max-width:none!important;align-self:stretch}
+#atrakcije .more-ideas-list{display:flex;flex-direction:row;flex-wrap:wrap;justify-content:center;gap:8px 22px}
+#atrakcije .detail p a{display:inline-block}
+@media(max-width:520px){
+ #atrakcije .details{grid-template-columns:repeat(2,minmax(0,1fr));gap:11px}
+ #atrakcije .details > article.more-idea{grid-column:1 / -1!important}
+ #atrakcije .more-ideas-list{flex-direction:row;gap:8px 14px}
+}
+
 </style>
 </head>
 <body>
@@ -336,12 +349,13 @@ footer p[style*="font-size:22px"]{font-family:'Great Vibes','Cormorant Garamond'
   <h2>Otkrijte Ljubuški i okolicu</h2>
   <p class="lead">Ako imate vremena prije ili nakon slavlja, izdvojili smo nekoliko lijepih mjesta za istraživanje Hercegovine.</p>
   <div class="details">
-   <article class="detail"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Slapovi_Kravice.jpg?width=1200" alt="Vodopad Kravica u zelenilu" loading="lazy" onerror="this.style.display='none'"><h3>Vodopad Kravica</h3><p>Prepoznatljivi slapovi na rijeci Trebižat, okruženi zelenilom — posebno lijepi za šetnju i fotografije.</p><p style="margin-top:12px"><a href="https://kravica.ba/" target="_blank" rel="noopener">Službene informacije</a> · <a href="https://www.google.com/maps/search/?api=1&query=Vodopad+Kravica+Ljubu%C5%A1ki" target="_blank" rel="noopener">Karta</a></p></article>
-   <article class="detail"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/52/Kocusa.jpg/960px-Kocusa.jpg" alt="Široki slapovi vodopada Koćuša" loading="lazy" onerror="this.style.display='none'"><h3>Vodopad Koćuša</h3><p>Širok, slikovit slap u Veljacima, uz stare mlinove i ugodan krajolik za kraći izlet.</p><p style="margin-top:12px"><a href="https://visitljubuski.com/natural-sights/" target="_blank" rel="noopener">Turističke informacije</a> · <a href="https://www.google.com/maps/search/?api=1&query=Vodopad+Ko%C4%87u%C5%A1a+Veljaci" target="_blank" rel="noopener">Karta</a></p></article>
-   <article class="detail"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Stari_grad_Ljubuski_01.jpg?width=960" alt="Povijesna tvrđava iznad Ljubuškog" loading="lazy" onerror="this.style.display='none'"><h3>Tvrđava hercega Stjepana</h3><p>Povijesna tvrđava iznad grada s pogledom na Ljubuški i okolni krajolik.</p><p style="margin-top:12px"><a href="https://visitljubuski.com/explore-ljubuski/" target="_blank" rel="noopener">Turističke informacije</a> · <a href="https://www.google.com/maps/search/?api=1&query=Tvr%C4%91ava+Herceg+Stjepan+Ljubu%C5%A1ki" target="_blank" rel="noopener">Karta</a></p></article>
-   <article class="detail more-idea"><h3>Još ideja za izlet</h3><p>Za još lokalnih doživljaja možete istražiti i ova mjesta:</p><ul class="more-ideas-list"><li><a href="https://www.google.com/maps/search/?api=1&query=Riblji+restoran+Bago+Teskera+Ljubu%C5%A1ki" target="_blank" rel="noopener">Riblji restoran Bago</a></li><li><a href="https://www.google.com/maps/search/?api=1&query=Kupali%C5%A1te+Bililo+Ljubu%C5%A1ki" target="_blank" rel="noopener">Kupalište Bililo</a></li><li><a href="https://www.google.com/maps/search/?api=1&query=Cevelju%C5%A1a+Mandi%C4%87a+jaz+Ljubu%C5%A1ki" target="_blank" rel="noopener">Čeveljuša – Mandića jaz</a></li><li><a href="https://visitljubuski.com/" target="_blank" rel="noopener">Visit Ljubuški – ostale ideje</a></li></ul></article>
+   <article class="detail"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Slapovi_Kravice.jpg?width=1200" alt="Vodopad Kravica u zelenilu" loading="lazy" onerror="this.style.display='none'"><h3>Vodopad Kravica</h3><p>Čuveni slapovi rijeke Trebižat, okruženi zelenilom i prirodom.</p><p style="margin-top:12px"><a href="https://www.google.com/maps/search/?api=1&query=Vodopad+Kravica+Ljubu%C5%A1ki" target="_blank" rel="noopener">Otvori kartu</a></p></article>
+   <article class="detail"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/52/Kocusa.jpg/960px-Kocusa.jpg" alt="Vodopad Koćuša" loading="lazy" onerror="this.style.display='none'"><h3>Vodopad Koćuša</h3><p>Slikovit slap u Veljacima, uz stare mlinove i miran prirodni ambijent.</p><p style="margin-top:12px"><a href="https://www.google.com/maps/search/?api=1&query=Vodopad+Ko%C4%87u%C5%A1a+Veljaci" target="_blank" rel="noopener">Otvori kartu</a></p></article>
+   <article class="detail"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Stari_grad_Ljubuski_01.jpg?width=960" alt="Tvrđava hercega Stjepana iznad Ljubuškog" loading="lazy" onerror="this.style.display='none'"><h3>Tvrđava hercega Stjepana</h3><p>Povijesna tvrđava s prekrasnim pogledom na Ljubuški i okolicu.</p><p style="margin-top:12px"><a href="https://www.google.com/maps/search/?api=1&query=Tvr%C4%91ava+Herceg+Stjepan+Ljubu%C5%A1ki" target="_blank" rel="noopener">Otvori kartu</a></p></article>
+   <article class="detail"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Tihaljina_Pe%C4%87_Mlini_9.jpg?width=960" alt="Izvor rijeke Tihaljine u Peć Mlinima, Drinovci" loading="lazy" onerror="this.style.display='none'"><h3>Peć Mlini – Drinovci</h3><p>Čaroban izvor Tihaljine pod stijenama, uz slapove i stare mlinice.</p><p style="margin-top:12px"><a href="https://www.google.com/maps/search/?api=1&query=Pe%C4%87+Mlini+Drinovci" target="_blank" rel="noopener">Otvori kartu</a></p></article>
+   <article class="detail more-idea"><h3>Još ideja za izlet</h3><p>Možete posjetiti i:</p><ul class="more-ideas-list"><li><a href="https://www.google.com/maps/search/?api=1&query=Riblji+restoran+Bago+Teskera+Ljubu%C5%A1ki" target="_blank" rel="noopener">Riblji restoran Bago</a></li><li><a href="https://www.google.com/maps/search/?api=1&query=Kupali%C5%A1te+Bililo+Ljubu%C5%A1ki" target="_blank" rel="noopener">Kupalište Bililo</a></li><li><a href="https://www.google.com/maps/search/?api=1&query=Cevelju%C5%A1a+Mandi%C4%87a+jaz+Ljubu%C5%A1ki" target="_blank" rel="noopener">Čeveljuša – Mandića jaz</a></li></ul></article>
   </div>
-  <p class="small" style="margin-top:18px">Provjerite radno vrijeme, ulaznice i uvjete posjeta prije polaska jer se mogu mijenjati ovisno o sezoni.</p><p class="small" style="margin-top:10px">Fotografije: Wikimedia Commons — <a href="https://commons.wikimedia.org/wiki/File:Slapovi_Kravice.jpg" target="_blank" rel="noopener">Kravica</a>, <a href="https://commons.wikimedia.org/wiki/File:Kocusa.jpg" target="_blank" rel="noopener">Koćuša</a>, <a href="https://commons.wikimedia.org/wiki/File:Stari_grad_Ljubuski_01.jpg" target="_blank" rel="noopener">Tvrđava</a>.</p>
+
  </div>
 </section>
 <section id="kontakti">

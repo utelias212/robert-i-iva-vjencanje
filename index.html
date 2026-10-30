@@ -178,6 +178,69 @@ footer{padding-top:24px}
 }
 #people-count-field .small{margin-top:7px;font-size:13px}
 
+
+/* Ispravak rasporeda: "Još ideja za izlet" stoji uz Tvrđavu u drugom stupcu. */
+#atrakcije .details > article.more-idea,
+#atrakcije .details > article.more-idea:has(a[href*="visitljubuski.com"]) {
+  grid-column: 2 !important;
+  grid-row: auto !important;
+  width: auto !important;
+  max-width: none !important;
+  align-self: stretch;
+}
+@media (max-width: 520px) {
+  #atrakcije .details > article.more-idea,
+  #atrakcije .details > article.more-idea:has(a[href*="visitljubuski.com"]) {
+    grid-column: 2 !important;
+    grid-row: auto !important;
+  }
+}
+
+
+/* Završno usklađivanje tipografije: dva osnovna fonta + rukopis samo za posebne detalje. */
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Lora:wght@400;500;600&family=Great+Vibes&display=swap');
+body{font-family:'Lora',Georgia,serif;font-size:16px;line-height:1.7;letter-spacing:0}
+h1,h2,h3,.date,.countdown-title,.countdown-number,#detalji .detail h3,#kontakti .contact-card h3,#atrakcije .detail h3,.rsvp>h2{font-family:'Cormorant Garamond',Georgia,serif;font-weight:500;letter-spacing:0}
+h1{font-family:'Great Vibes','Cormorant Garamond',serif;font-size:clamp(68px,12vw,104px);font-weight:400;line-height:1.12;letter-spacing:0}
+h2{font-size:clamp(34px,5.5vw,42px);line-height:1.18}
+h3{font-size:clamp(22px,3vw,26px);line-height:1.25}
+.kicker,.btn,.countdown-label,.contact-role{font-family:'Lora',Georgia,serif}
+.kicker{font-size:10px;letter-spacing:.18em;font-weight:600}
+.lead{font-family:'Lora',Georgia,serif;font-size:16px;line-height:1.7}
+.date{font-size:21px;letter-spacing:.12em}
+#detalji .detail h3{font-size:clamp(25px,4vw,30px);line-height:1.25}
+#detalji .detail p{font-size:16px;line-height:1.7}
+#detalji .detail p:first-of-type{font-size:20px}
+#detalji .detail .time{font-size:27px!important}
+#atrakcije .detail h3{font-size:clamp(21px,3vw,25px);line-height:1.25}
+#atrakcije .detail p{font-size:14px;line-height:1.65}
+#atrakcije .more-idea h3{font-size:24px}
+#atrakcije .more-ideas-list a{font-size:14px}
+#kontakti .contact-card h3{font-size:25px}
+#kontakti .contact-role{font-size:10px!important;letter-spacing:.13em}
+#rsvp .rsvp>p.small{font-family:'Lora',Georgia,serif;font-size:15px;line-height:1.6}
+.field label,.legend,#people-count-field label{font-family:'Lora',Georgia,serif;font-size:14px;line-height:1.5;font-weight:600}
+input[type=text],textarea,select,#people-count-field input{font-family:'Lora',Georgia,serif;font-size:15px}
+.choice{font-family:'Lora',Georgia,serif;font-size:14px}
+.small,.status,footer p[style*="font:11px"]{font-family:'Lora',Georgia,serif}
+.small{font-size:12px;line-height:1.6}
+.btn{font-size:10px;letter-spacing:.1em}
+.countdown-title{font-size:29px}
+.countdown-number{font-size:clamp(34px,6vw,44px)}
+footer{font-family:'Lora',Georgia,serif;font-size:13px}
+footer p[style*="font-size:22px"]{font-family:'Great Vibes','Cormorant Garamond',serif;font-size:34px!important;font-style:normal!important}
+@media(max-width:520px){
+ h1{font-size:clamp(66px,16vw,88px)}
+ h2{font-size:34px}
+ #detalji .detail h3{font-size:25px}
+ #detalji .detail p{font-size:15px}
+ #detalji .detail p:first-of-type{font-size:18px}
+ #atrakcije .detail h3{font-size:19px}
+ #atrakcije .detail p{font-size:12px}
+ #atrakcije .more-idea h3{font-size:21px}
+ #kontakti .contact-card h3{font-size:24px}
+}
+
 </style>
 </head>
 <body>

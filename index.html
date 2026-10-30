@@ -109,12 +109,12 @@ footer{padding-top:24px}
 
 /* RSVP rok i sažetiji izbor atrakcija */
 #rsvp .rsvp>p.small{font-size:16px;color:#806f61;font-weight:600;letter-spacing:.01em}
-#atrakcije .more-idea{grid-column:1/-1;display:block;padding:22px 24px;text-align:center;background:transparent;border:1px solid #e1d6c9;box-shadow:none}
+#atrakcije .more-idea{grid-column:auto;display:block;padding:22px 24px;text-align:center;background:transparent;border:1px solid #e1d6c9;box-shadow:none}
 #atrakcije .more-idea h3{padding:0;margin-bottom:8px;font-size:25px}
 #atrakcije .more-ideas-list{list-style:none;padding:0;margin:14px auto 0;display:flex;flex-wrap:wrap;justify-content:center;gap:8px 22px;max-width:650px}
 #atrakcije .more-ideas-list li{margin:0}
 #atrakcije .more-ideas-list a{color:#795846;text-decoration:underline;text-underline-offset:3px;font-weight:600;font-size:15px}
-@media(max-width:520px){#atrakcije .more-idea{grid-column:1/-1;padding:18px 14px}#atrakcije .more-ideas-list{flex-direction:column;gap:8px}}
+@media(max-width:520px){#atrakcije .more-idea{grid-column:auto;padding:18px 14px}#atrakcije .more-ideas-list{flex-direction:column;gap:8px}}
 
 
 /* Suptilni detalji i animacije */
@@ -233,7 +233,7 @@ footer{padding-top:24px}
     <fieldset style="border:0;padding:0;margin:0" id="accommodation-field"><legend class="legend">Trebate li smještaj? *</legend><div class="choices">
      <label class="choice"><input type="radio" name="accommodation" value="Da" required> Da</label>
      <label class="choice"><input type="radio" name="accommodation" value="Ne" required> Ne</label>
-    </div><p class="small accommodation-note">Smještaj za goste osiguravamo potpuno besplatno.</p></fieldset>
+    </div><p class="small accommodation-note">Za sve naše goste kojima je potreban smještaj, rado ćemo ga osigurati.</p></fieldset>
     <fieldset id="nights-field" hidden style="border:0;padding:0;margin:0"><legend class="legend">Za koje noći trebate smještaj? *</legend><div class="checks">
      <label class="choice"><input type="checkbox" name="nights" value="27.–28. svibnja 2027." data-night="first"> Noć 27. na 28. svibnja 2027.</label>
      <label class="choice"><input type="checkbox" name="nights" value="28.–29. svibnja 2027." data-night="second"> Noć 28. na 29. svibnja 2027.</label>

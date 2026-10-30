@@ -141,6 +141,43 @@ footer{padding-top:24px}
 @media(max-width:520px){#people-count-field{padding:17px 14px 15px 60px}#people-count-field:before{left:12px;top:20px;width:36px;height:36px;font-size:22px}#kontakti .contact-whatsapp{width:100%;max-width:240px}}
 @media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;animation:none!important;transition:none!important}}
 
+
+/* Usklađivanje polja za broj osoba s ostatkom RSVP obrasca */
+#people-count-field{
+  position:static;
+  padding:0;
+  margin:0;
+  background:transparent;
+  border:0;
+  border-radius:0;
+  box-shadow:none;
+}
+#people-count-field:before{display:none;content:none}
+#people-count-field label{
+  display:block;
+  font-family:inherit;
+  font-size:15px;
+  line-height:1.4;
+  font-weight:600;
+  color:var(--ink);
+  margin:0 0 6px;
+}
+#people-count-field input{
+  display:block;
+  width:100%;
+  max-width:none;
+  min-height:48px;
+  height:auto;
+  box-sizing:border-box;
+  font:16px Arial,sans-serif;
+  color:var(--ink);
+  background:var(--card);
+  border:1px solid var(--line);
+  border-radius:4px;
+  padding:13px 12px;
+}
+#people-count-field .small{margin-top:7px;font-size:13px}
+
 </style>
 </head>
 <body>
@@ -181,7 +218,6 @@ footer{padding-top:24px}
  <div class="wrap">
   <div class="kicker">Budite dio naše priče</div><h2>Veselimo se vašem dolasku</h2>
   <p class="lead">Molimo vas da potvrdite dolazak i upišete podatke za vas i vašu pratnju.</p>
-  <div class="rsvp-deadline"><strong>Rok za potvrdu dolaska: 28. travnja 2027.</strong><span>Molimo vas da nam svoj odgovor pošaljete najkasnije mjesec dana prije vjenčanja.</span></div>
   <div class="rsvp">
    <h2 style="font-size:27px">Potvrda dolaska</h2>
    <p class="small" style="text-align:center;margin:0 auto 24px">Molimo potvrdite dolazak najkasnije do 28. travnja 2027.</p>

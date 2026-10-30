@@ -97,6 +97,15 @@ footer{padding-top:24px}
  #kontakti .contact-card{padding:22px 16px}
 }
 
+
+.rsvp-deadline{max-width:650px;margin:24px auto 0;padding:17px 20px;border:1px solid #d8c4b4;background:#fffaf4;text-align:center;color:#51483e}
+.rsvp-deadline strong{display:block;font-size:18px;font-weight:600;margin-bottom:4px}
+.rsvp-deadline span{display:block;font-size:14px;color:#7e7264}
+.accommodation-note{margin-top:10px}
+#people-count-field input{max-width:180px}
+.status.success{padding:14px 16px;margin-top:14px;background:#f8f5ef;border:1px solid #c9d0bd;color:#566348;font-size:15px}
+@media(max-width:520px){.rsvp-deadline{margin:20px 2px 0;padding:15px 13px}.rsvp-deadline strong{font-size:17px}}
+
 </style>
 </head>
 <body>
@@ -137,6 +146,7 @@ footer{padding-top:24px}
  <div class="wrap">
   <div class="kicker">Budite dio naše priče</div><h2>Veselimo se vašem dolasku</h2>
   <p class="lead">Molimo vas da potvrdite dolazak i upišete podatke za vas i vašu pratnju.</p>
+  <div class="rsvp-deadline"><strong>Rok za potvrdu dolaska: 28. travnja 2027.</strong><span>Molimo vas da nam svoj odgovor pošaljete najkasnije mjesec dana prije vjenčanja.</span></div>
   <div class="rsvp">
    <h2 style="font-size:27px">Potvrda dolaska</h2>
    <p class="small" style="text-align:center;margin:0 auto 24px">Ispunite obrazac u nastavku. Odgovori se spremaju u privatnu tablicu organizatora.</p>
@@ -146,12 +156,13 @@ footer{padding-top:24px}
      <label class="choice"><input type="radio" name="attending" value="Da, dolazim" required> Da, dolazim</label>
      <label class="choice"><input type="radio" name="attending" value="Nažalost, ne mogu doći" required> Nažalost, ne mogu doći</label>
     </div></fieldset>
+    <div class="field" id="people-count-field" hidden><label for="peopleCount">Ukupan broj osoba koje dolaze (uključujući vas) *</label><input id="peopleCount" name="peopleCount" type="number" min="1" max="20" step="1" inputmode="numeric" placeholder="Npr. 2" required><p class="small">Upišite ukupan broj odraslih i djece u vašoj prijavi.</p></div>
     <div class="field" id="companions-field"><label for="companions">Imena osoba koje dolaze s vama</label><textarea id="companions" name="companions" placeholder="Npr. Ana Marković, Luka Marković (dijete)"></textarea><p class="small">Ako dolazite sami, ostavite prazno. Ako dolazite s djecom, navedite njihova imena i uz svako napišite „(dijete)” kako bismo lakše prebrojili odrasle i djecu.</p></div>
     <div class="field" id="diet-field"><label for="diet">Prehrambene potrebe ili napomene</label><textarea id="diet" name="diet" placeholder="Alergije, posebna prehrana ili druge napomene"></textarea></div>
     <fieldset style="border:0;padding:0;margin:0" id="accommodation-field"><legend class="legend">Trebate li smještaj? *</legend><div class="choices">
      <label class="choice"><input type="radio" name="accommodation" value="Da" required> Da</label>
      <label class="choice"><input type="radio" name="accommodation" value="Ne" required> Ne</label>
-    </div></fieldset>
+    </div><p class="small accommodation-note">Smještaj za goste osiguravamo potpuno besplatno.</p></fieldset>
     <fieldset id="nights-field" hidden style="border:0;padding:0;margin:0"><legend class="legend">Za koje noći trebate smještaj? *</legend><div class="checks">
      <label class="choice"><input type="checkbox" name="nights" value="27.–28. svibnja 2027." data-night="first"> Noć 27. na 28. svibnja 2027.</label>
      <label class="choice"><input type="checkbox" name="nights" value="28.–29. svibnja 2027." data-night="second"> Noć 28. na 29. svibnja 2027.</label>
@@ -215,12 +226,16 @@ const nightsField=document.getElementById('nights-field');
 const accommodationRadios=[...document.querySelectorAll('input[name="accommodation"]')];
 const attendingRadios=[...document.querySelectorAll('input[name="attending"]')];
 const companionsField=document.getElementById('companions-field');
+const peopleCountField=document.getElementById('people-count-field');
+const peopleCountInput=document.getElementById('peopleCount');
 const dietField=document.getElementById('diet-field');
 function updateConditionalFields(){
  const attending=document.querySelector('input[name="attending"]:checked')?.value||'';
  const accommodation=document.querySelector('input[name="accommodation"]:checked')?.value||'';
  const isAttending=attending==='Da, dolazim';
- companionsField.hidden=!isAttending; dietField.hidden=!isAttending;
+ companionsField.hidden=!isAttending; peopleCountField.hidden=!isAttending; dietField.hidden=!isAttending;
+ peopleCountInput.required=isAttending;
+ if(!isAttending) peopleCountInput.value='';
  if(!isAttending){
   document.getElementById('companions').value='';
   document.getElementById('diet').value='';
@@ -255,16 +270,17 @@ form.addEventListener('submit',async e=>{
  const data=new URLSearchParams();
  data.set('fullName',document.getElementById('fullName').value.trim());
  data.set('attending',document.querySelector('input[name="attending"]:checked')?.value||'');
+ data.set('peopleCount',isAttending?document.getElementById('peopleCount').value:'0');
  data.set('companions',document.getElementById('companions').value.trim());
  data.set('diet',document.getElementById('diet').value.trim());
  data.set('accommodation',document.querySelector('input[name="accommodation"]:checked')?.value||'Nije primjenjivo');
  data.set('nights',[...document.querySelectorAll('input[name="nights"]:checked')].map(x=>x.value).join(', '));
  data.set('submittedAt',new Date().toISOString());
- btn.disabled=true;btn.textContent='Slanje…';status.textContent='Šaljemo vaš odgovor…';
+ btn.disabled=true;btn.textContent='Slanje…';status.classList.remove('success');status.textContent='Šaljemo vaš odgovor…';
  try{
   await fetch(SUBMISSION_URL,{method:'POST',mode:'no-cors',headers:{'Content-Type':'application/x-www-form-urlencoded;charset=UTF-8'},body:data.toString()});
-  form.reset();updateConditionalFields();status.textContent='Hvala! Vaš odgovor je poslan.';
- }catch(err){status.textContent='Slanje nije uspjelo. Provjerite internetsku vezu ili pokušajte ponovno.';}
+  form.reset();updateConditionalFields();status.classList.add('success');status.textContent='Hvala, zaprimili smo vaš odgovor! Vaša potvrda je zabilježena.'; status.scrollIntoView({behavior:'smooth',block:'center'});
+ }catch(err){status.classList.remove('success');status.textContent='Slanje nije uspjelo. Provjerite internetsku vezu ili pokušajte ponovno.';}
  finally{btn.disabled=false;btn.textContent='Potvrdi dolazak';}
 });
 updateConditionalFields();

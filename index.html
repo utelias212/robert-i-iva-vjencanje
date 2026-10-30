@@ -241,6 +241,28 @@ footer p[style*="font-size:22px"]{font-family:'Great Vibes','Cormorant Garamond'
  #kontakti .contact-card h3{font-size:24px}
 }
 
+
+/* Naslovna na mobitelu: imena ostaju u jednom retku. */
+@media(max-width:600px){
+  .hero h1{
+    white-space:nowrap!important;
+    display:block!important;
+    width:max-content!important;
+    max-width:100%!important;
+    margin-left:auto!important;
+    margin-right:auto!important;
+    font-size:clamp(39px,10.2vw,66px)!important;
+    line-height:1.15!important;
+    letter-spacing:-.025em!important;
+  }
+  .hero h1 .amp{
+    display:inline!important;
+    white-space:nowrap!important;
+    font-size:.72em!important;
+    margin:0 .025em!important;
+  }
+}
+
 </style>
 </head>
 <body>

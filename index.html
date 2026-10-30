@@ -106,6 +106,41 @@ footer{padding-top:24px}
 .status.success{padding:14px 16px;margin-top:14px;background:#f8f5ef;border:1px solid #c9d0bd;color:#566348;font-size:15px}
 @media(max-width:520px){.rsvp-deadline{margin:20px 2px 0;padding:15px 13px}.rsvp-deadline strong{font-size:17px}}
 
+
+/* RSVP rok i sažetiji izbor atrakcija */
+#rsvp .rsvp>p.small{font-size:16px;color:#806f61;font-weight:600;letter-spacing:.01em}
+#atrakcije .more-idea{grid-column:1/-1;display:block;padding:22px 24px;text-align:center;background:transparent;border:1px solid #e1d6c9;box-shadow:none}
+#atrakcije .more-idea h3{padding:0;margin-bottom:8px;font-size:25px}
+#atrakcije .more-ideas-list{list-style:none;padding:0;margin:14px auto 0;display:flex;flex-wrap:wrap;justify-content:center;gap:8px 22px;max-width:650px}
+#atrakcije .more-ideas-list li{margin:0}
+#atrakcije .more-ideas-list a{color:#795846;text-decoration:underline;text-underline-offset:3px;font-weight:600;font-size:15px}
+@media(max-width:520px){#atrakcije .more-idea{grid-column:1/-1;padding:18px 14px}#atrakcije .more-ideas-list{flex-direction:column;gap:8px}}
+
+
+/* Suptilni detalji i animacije */
+#people-count-field{position:relative;padding:20px 20px 17px 76px;background:linear-gradient(135deg,#fffdf9 0%,#f4ece3 100%);border:1px solid #d9c5b5;border-radius:12px;box-shadow:0 5px 18px rgba(82,61,45,.07);}
+#people-count-field:before{content:"♧";position:absolute;left:20px;top:25px;width:40px;height:40px;display:grid;place-items:center;border-radius:50%;background:#eadbd0;color:#8b6d5c;font-size:25px;}
+#people-count-field label{font-family:Georgia,serif;font-size:18px;line-height:1.35;color:#57483d;margin-bottom:10px;}
+#people-count-field input{max-width:100%;height:52px;border-radius:8px;background:#fffefa;border-color:#d5c3b5;font-size:18px;padding:12px 15px;}
+#people-count-field .small{margin-top:8px;font-size:12px;}
+.contact-actions{display:flex;flex-direction:column;align-items:center;gap:9px}
+#kontakti .contact-whatsapp{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:43px;padding:9px 14px;border-radius:3px;border:1px solid #9aa18a;background:#f0f1e9;color:#59644e;text-decoration:none;font:600 12px/1.4 Arial,sans-serif;transition:background .25s ease,transform .25s ease}
+#kontakti .contact-whatsapp:hover{background:#e4e8da;transform:translateY(-1px)}
+/* Nježno pojavljivanje sadržaja pri pomicanju */
+@media (prefers-reduced-motion:no-preference){
+ .hero .wrap{animation:softAppear 1.1s ease both}
+ section .wrap> .kicker,section .wrap>h2,section .wrap>.lead{animation:softAppear .85s ease both}
+ .detail,.rsvp-deadline,.rsvp{animation:softAppear .9s ease both}
+ .hero:before,.hero:after{display:block;opacity:.22}
+ section{position:relative}
+ section:not(#detalji):not(#rsvp):after{content:"✿";position:absolute;right:clamp(12px,5vw,54px);top:26px;color:#b99d8a;opacity:.17;font-size:23px;pointer-events:none}
+ .detail{transition:transform .28s ease,box-shadow .28s ease}
+ #atrakcije .detail:hover,#kontakti .contact-card:hover{transform:translateY(-3px);box-shadow:0 10px 24px rgba(67,48,34,.09)}
+}
+@keyframes softAppear{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+@media(max-width:520px){#people-count-field{padding:17px 14px 15px 60px}#people-count-field:before{left:12px;top:20px;width:36px;height:36px;font-size:22px}#kontakti .contact-whatsapp{width:100%;max-width:240px}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;animation:none!important;transition:none!important}}
+
 </style>
 </head>
 <body>
@@ -149,7 +184,7 @@ footer{padding-top:24px}
   <div class="rsvp-deadline"><strong>Rok za potvrdu dolaska: 28. travnja 2027.</strong><span>Molimo vas da nam svoj odgovor pošaljete najkasnije mjesec dana prije vjenčanja.</span></div>
   <div class="rsvp">
    <h2 style="font-size:27px">Potvrda dolaska</h2>
-   <p class="small" style="text-align:center;margin:0 auto 24px">Ispunite obrazac u nastavku. Odgovori se spremaju u privatnu tablicu organizatora.</p>
+   <p class="small" style="text-align:center;margin:0 auto 24px">Molimo potvrdite dolazak najkasnije do 28. travnja 2027.</p>
    <form id="rsvp-form" class="form-grid">
     <div class="field"><label for="fullName">Ime i prezime *</label><input id="fullName" name="fullName" type="text" required autocomplete="name" placeholder="Vaše ime i prezime"></div>
     <fieldset style="border:0;padding:0;margin:0"><legend class="legend">Hoćete li prisustvovati vjenčanju? *</legend><div class="choices">
@@ -183,13 +218,9 @@ footer{padding-top:24px}
    <article class="detail"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Slapovi_Kravice.jpg?width=1200" alt="Vodopad Kravica u zelenilu" loading="lazy" onerror="this.style.display='none'"><h3>Vodopad Kravica</h3><p>Prepoznatljivi slapovi na rijeci Trebižat, okruženi zelenilom — posebno lijepi za šetnju i fotografije.</p><p style="margin-top:12px"><a href="https://kravica.ba/" target="_blank" rel="noopener">Službene informacije</a> · <a href="https://www.google.com/maps/search/?api=1&query=Vodopad+Kravica+Ljubu%C5%A1ki" target="_blank" rel="noopener">Karta</a></p></article>
    <article class="detail"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/52/Kocusa.jpg/960px-Kocusa.jpg" alt="Široki slapovi vodopada Koćuša" loading="lazy" onerror="this.style.display='none'"><h3>Vodopad Koćuša</h3><p>Širok, slikovit slap u Veljacima, uz stare mlinove i ugodan krajolik za kraći izlet.</p><p style="margin-top:12px"><a href="https://visitljubuski.com/natural-sights/" target="_blank" rel="noopener">Turističke informacije</a> · <a href="https://www.google.com/maps/search/?api=1&query=Vodopad+Ko%C4%87u%C5%A1a+Veljaci" target="_blank" rel="noopener">Karta</a></p></article>
    <article class="detail"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Stari_grad_Ljubuski_01.jpg?width=960" alt="Povijesna tvrđava iznad Ljubuškog" loading="lazy" onerror="this.style.display='none'"><h3>Tvrđava hercega Stjepana</h3><p>Povijesna tvrđava iznad grada s pogledom na Ljubuški i okolni krajolik.</p><p style="margin-top:12px"><a href="https://visitljubuski.com/explore-ljubuski/" target="_blank" rel="noopener">Turističke informacije</a> · <a href="https://www.google.com/maps/search/?api=1&query=Tvr%C4%91ava+Herceg+Stjepan+Ljubu%C5%A1ki" target="_blank" rel="noopener">Karta</a></p></article>
-   <article class="detail"><img src="https://www.moja-djelatnost.hr/Image/IndexFile?name=Riblji_restoran_Ljubu%C5%A1ki6.jpg" alt="Uređen restoran i stolovi za objedovanje" loading="lazy" onerror="this.style.display='none'"><h3>Riblji restoran Bago</h3><p>Poznato mjesto u Ljubuškom za ljubitelje ribljih specijaliteta i morske hrane.</p><p style="margin-top:12px"><a href="https://visitljubuski.com/gastro-ponuda-u-ljubuskom/" target="_blank" rel="noopener">Gastro ponuda Ljubuškog</a> · <a href="https://www.google.com/maps/search/?api=1&query=Riblji+restoran+Bago+Teskera+Ljubu%C5%A1ki" target="_blank" rel="noopener">Karta</a></p></article>
-   <article class="detail"><img src="https://www.klikploce.com.hr/kl1k_c/uploads/2024/06/FB_IMG_1719122378378-1024x1017.jpg" alt="Kupalište Bililo uz rijeku Trebižat" loading="lazy" onerror="this.style.display='none'"><h3>Kupalište Bililo</h3><p>Ugodno mjesto uz rijeku Trebižat za predah, osvježenje i uživanje u prirodnom ambijentu.</p><p style="margin-top:12px"><a href="https://visitljubuski.com/gastro-ponuda-u-ljubuskom/" target="_blank" rel="noopener">Turističke informacije</a> · <a href="https://www.google.com/maps/search/?api=1&query=Kupali%C5%A1te+Bililo+Ljubu%C5%A1ki" target="_blank" rel="noopener">Karta</a></p></article>
-   <article class="detail"><img src="https://www.nedjelja.ba/upload/image/Multimedija/Foto%20dana/2025/07/Rijeka-Trebizat.jpg" alt="Slapovi na rijeci Trebižat kod Čeveljuše" loading="lazy" onerror="this.style.display='none'"><h3>Čeveljuša – Mandića jaz</h3><p>Restoran i prirodni ambijent uz vodu, dobar izbor za odmor i lokalnu gastronomiju.</p><p style="margin-top:12px"><a href="https://www.facebook.com/ceveljusa/?locale=hr_HR" target="_blank" rel="noopener">Stranica lokacije</a> · <a href="https://www.google.com/maps/search/?api=1&query=Cevelju%C5%A1a+Mandi%C4%87a+jaz+Ljubu%C5%A1ki" target="_blank" rel="noopener">Karta</a></p></article>
-
-   <article class="detail"><h3>Još ideja za izlet</h3><p>Na službenoj stranici Turističke zajednice možete pronaći dodatne prijedloge za aktivnosti, gastronomiju i znamenitosti.</p><p style="margin-top:12px"><a href="https://visitljubuski.com/" target="_blank" rel="noopener">Visit Ljubuški</a></p></article>
+   <article class="detail more-idea"><h3>Još ideja za izlet</h3><p>Za još lokalnih doživljaja možete istražiti i ova mjesta:</p><ul class="more-ideas-list"><li><a href="https://www.google.com/maps/search/?api=1&query=Riblji+restoran+Bago+Teskera+Ljubu%C5%A1ki" target="_blank" rel="noopener">Riblji restoran Bago</a></li><li><a href="https://www.google.com/maps/search/?api=1&query=Kupali%C5%A1te+Bililo+Ljubu%C5%A1ki" target="_blank" rel="noopener">Kupalište Bililo</a></li><li><a href="https://www.google.com/maps/search/?api=1&query=Cevelju%C5%A1a+Mandi%C4%87a+jaz+Ljubu%C5%A1ki" target="_blank" rel="noopener">Čeveljuša – Mandića jaz</a></li><li><a href="https://visitljubuski.com/" target="_blank" rel="noopener">Visit Ljubuški – ostale ideje</a></li></ul></article>
   </div>
-  <p class="small" style="margin-top:18px">Provjerite radno vrijeme, ulaznice i uvjete posjeta prije polaska jer se mogu mijenjati ovisno o sezoni.</p><p class="small" style="margin-top:10px">Fotografije: Hotel Bigeste / Turistička zajednica Ljubuškog i Wikimedia Commons — <a href="https://commons.wikimedia.org/wiki/File:Slapovi_Kravice.jpg" target="_blank" rel="noopener">Kravica</a>, <a href="https://commons.wikimedia.org/wiki/File:Kocusa.jpg" target="_blank" rel="noopener">Koćuša</a>, <a href="https://commons.wikimedia.org/wiki/File:Stari_grad_Ljubuski_01.jpg" target="_blank" rel="noopener">Tvrđava</a>.</p>
+  <p class="small" style="margin-top:18px">Provjerite radno vrijeme, ulaznice i uvjete posjeta prije polaska jer se mogu mijenjati ovisno o sezoni.</p><p class="small" style="margin-top:10px">Fotografije: Wikimedia Commons — <a href="https://commons.wikimedia.org/wiki/File:Slapovi_Kravice.jpg" target="_blank" rel="noopener">Kravica</a>, <a href="https://commons.wikimedia.org/wiki/File:Kocusa.jpg" target="_blank" rel="noopener">Koćuša</a>, <a href="https://commons.wikimedia.org/wiki/File:Stari_grad_Ljubuski_01.jpg" target="_blank" rel="noopener">Tvrđava</a>.</p>
  </div>
 </section>
 <section id="kontakti">
@@ -198,8 +229,8 @@ footer{padding-top:24px}
   <h2 style="text-align:center">Kontakti</h2>
   <p class="lead" style="text-align:center">Ako imate pitanje u vezi s dolaskom ili organizacijom, slobodno nam se javite.</p>
   <div class="details">
-   <article class="detail contact-card"><div class="contact-mark" aria-hidden="true">R</div><h3>Robert Brekalo</h3><p class="contact-role">Kontakt za goste</p><a class="contact-phone" href="tel:+385976776738"><span aria-hidden="true">☎</span> 097 677 6738</a></article>
-   <article class="detail contact-card"><div class="contact-mark" aria-hidden="true">I</div><h3>Iva Jelinić</h3><p class="contact-role">Kontakt za goste</p><a class="contact-phone" href="tel:+385917673264"><span aria-hidden="true">☎</span> 091 767 3264</a></article>
+   <article class="detail contact-card"><div class="contact-mark" aria-hidden="true">R</div><h3>Robert Brekalo</h3><p class="contact-role">Kontakt za goste</p><div class="contact-actions"><a class="contact-phone" href="tel:+385976776738"><span aria-hidden="true">☎</span> 097 677 6738</a><a class="contact-whatsapp" href="https://wa.me/385976776738?text=Pozdrav%20Roberte%2C%20imam%20pitanje%20u%20vezi%20vjen%C4%8Danja." target="_blank" rel="noopener"><span aria-hidden="true">◉</span> Pošalji WhatsApp poruku</a></div></article>
+   <article class="detail contact-card"><div class="contact-mark" aria-hidden="true">I</div><h3>Iva Jelinić</h3><p class="contact-role">Kontakt za goste</p><div class="contact-actions"><a class="contact-phone" href="tel:+385917673264"><span aria-hidden="true">☎</span> 091 767 3264</a><a class="contact-whatsapp" href="https://wa.me/385917673264?text=Pozdrav%20Iva%2C%20imam%20pitanje%20u%20vezi%20vjen%C4%8Danja." target="_blank" rel="noopener"><span aria-hidden="true">◉</span> Pošalji WhatsApp poruku</a></div></article>
   </div>
  </div>
 </section>
